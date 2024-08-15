@@ -1,101 +1,124 @@
-/* Estilos generales */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h1 {
-    color: #333;
-    text-align: center;
-  }
-  
-  input[type="number"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 10px;
-    font-size: 16px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    box-sizing: border-box;
-  }
-  
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: (37, 150, 190);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  overflow-y: auto; 
+  max-height: 90vh; 
+}
+
+h1 {
+  color: #ffffff;
+  text-align: center;
+}
+
+input[type="number"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #044284;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #044284;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ddd;
+  margin: 20px 0;
+}
+
+.pair-divider {
+  height: 2px;
+  background-color: #044284;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+p {
+  text-align: center;
+  color: #666;
+}
+
+/* Estilos para las tarjetas de jugadores */
+.player-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 15px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.player-card:hover {
+  transform: translateY(-5px);
+}
+
+.player-card h3 {
+  margin: 0;
+  color: #044284;
+  font-size: 1.5em;
+}
+
+.player-card p {
+  margin: 5px 0;
+  color: #444;
+  font-size: 1em;
+}
+
+.pair p {
+  margin: 5px 0;
+  color: #fcf9f9;
+  font-size: 1em;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+  input[type="number"],
   button {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+      font-size: 14px;
   }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  hr {
-    border: none;
-    height: 1px;
-    background-color: #ddd;
-    margin: 20px 0;
-  }
-  
-  p {
-    text-align: center;
-    color: #666;
-  }
-  
-  /* Estilos para las tarjetas de jugadores */
+
   .player-card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    padding: 15px;
-    overflow: hidden;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .player-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .player-card h3 {
-    margin: 0;
-    color: #007bff;
-  }
-  
-  .player-card p {
-    margin: 5px 0;
-    color: #444;
-  }
-  
-  /* Estilos responsivos */
-  @media (max-width: 600px) {
-    input[type="number"],
-    button {
-      font-size: 14px;
-    }
-  
-    .player-card {
       padding: 10px;
-    }
-  
-    .player-card h3 {
-      font-size: 18px;
-    }
-  
-    .player-card p {
-      font-size: 14px;
-    }
   }
-  
+
+  .player-card h3 {
+      font-size: 18px;
+  }
+
+  .player-card p {
+      font-size: 14px;
+  }
+}

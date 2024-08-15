@@ -1,5 +1,6 @@
+//ShowsPlayer.tsx
 import { Player } from "../models/Sentence";
-import "../css/Players.css"
+import "../css/App.css"
 
 export const ShowPlayer = (props: { player: Player }) => {
   return (
