@@ -35,21 +35,27 @@ const PlayerPairFinder: React.FC = () => {
         const result = findPlayerPairsWithSum(players, targetSum);
         setPlayerPairs(result);
     };
-
     const findPlayerPairsWithSum = (players: Player[], targetSum: number): [Player, Player][] => {
         const pairs: [Player, Player][] = [];
-        const heights = players.map((player) => Number(player.h_in));
-
-        for (let i = 0; i < players.length; i++) {
-            for (let j = i + 1; j < players.length; j++) {
-                if (heights[i] + heights[j] === targetSum) {
-                    pairs.push([players[i], players[j]]);
-                }
+        const heightMap = new Map<number, Player[]>();
+    
+        players.forEach((player) => {
+            const height = Number(player.h_in);
+            const complement = targetSum - height;
+    
+            if (heightMap.has(complement)) {
+                heightMap.get(complement)!.forEach(p => pairs.push([p, player]));
             }
-        }
-
+    
+            if (!heightMap.has(height)) {
+                heightMap.set(height, []);
+            }
+            heightMap.get(height)!.push(player);
+        });
+    
         return pairs;
     };
+    
 
     return (
         <div className="Pair">
